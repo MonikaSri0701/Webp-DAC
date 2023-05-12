@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Square Calculator</title>
+  </head>
+  <body>
+    <label for="num-input">Enter a number:</label>
+    <input type="text" id="num-input" />
+    <button id="calc-btn">Calculate Square</button>
+
+    <script>
+      const numInput = document.getElementById("num-input");
+      const calcBtn = document.getElementById("calc-btn");
+
+      calcBtn.addEventListener("click", () => {
+        // Convert the user input to a number
+        const parsedNum = parseFloat(numInput.value);
+
+        // Check if the user input is a valid number
+        if (isNaN(parsedNum)) {
+          console.log("Invalid input. Please enter a number.");
+        } else {
+          // Calculate the square of the number
+          const square = parsedNum * parsedNum;
+
+          // Log the result to the console
+          console.log(`The square of ${parsedNum} is ${square}.`);
+        }
+      });
+    </script>
+  </body>
+</html>

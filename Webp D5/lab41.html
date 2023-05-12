@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="lab41.js"></script>
+  </head>
+  <body>
+    <center>
+    <h1 style="background-color: burlywood;">Iphone 14 Pro Max</h1>
+    <div style="height: 400px; background: whitesmoke">
+      <img
+        id="imgid1"
+        src="41.jpg"
+        alt=""
+        style="object-fit: cover; height: 300px"
+      />
+    </div>
+    <h1>
+        <span style="cursor: pointer" onclick="like()">&#128077;</span>
+        <span id="likecounter">101</span>
+      </h1>
+      <h1>
+        <span style="cursor: pointer" onclick="dislike()">&#128078;</span>
+        <span id="dislikecounter">10</span>
+      </h1>
+    <br />
+
+    <input type="button" value="Front View" onclick="changeImageView1(1)" />
+    <input type="button" value="Back View" onclick="changeImageView1(2)" />
+    <input type="button" value="Side View" onclick="changeImageView1(3)" />
+    <input type="button" value="All View" onclick="changeImageView1(4)" />
+    <input type="button" value="Camera View" onclick="changeImageView1(5)" />
+    
+</center>
+  </body>
+</html>

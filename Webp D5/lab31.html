@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rainbow Colors</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        background-color: white;
+        padding: 20px;
+        font-size: 25px;
+      }
+
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #violet {
+        background-color: violet;
+        color: white;
+      }
+
+      #indigo {
+        background-color: indigo;
+        color: white;
+      }
+
+      #blue {
+        background-color: blue;
+        color: white;
+      }
+
+      #green {
+        background-color: green;
+        color: white;
+      }
+
+      #yellow {
+        background-color: yellow;
+        color: black;
+      }
+
+      #orange {
+        background-color: orange;
+        color: white;
+      }
+
+      #red {
+        background-color: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rainbow Colors</h1>
+    <p id="text">Hello ! Hope you are doing great !!</p>
+    <button id="violet" onclick="changeColor('violet')">Violet</button>
+    <button id="indigo" onclick="changeColor('indigo')">Indigo</button>
+    <button id="blue" onclick="changeColor('blue')">Blue</button>
+    <button id="green" onclick="changeColor('green')">Green</button>
+    <button id="yellow" onclick="changeColor('yellow')">Yellow</button>
+    <button id="orange" onclick="changeColor('orange')">Orange</button>
+    <button id="red" onclick="changeColor('red')">Red</button>
+    <button onclick="resetColor()">Reset</button>
+
+    <input type="button" value="Increase Font" onclick="applyFont('30px')" />
+    <input type="button" value="Decrease Font" onclick="applyFont('20px')" />
+    <input type="button" value="Reset Font" onclick="applyFont('')" />
+
+    <script>
+      function changeColor(color) {
+        document.getElementById("text").style.backgroundColor = color;
+      }
+
+      function resetColor() {
+        document.getElementById("text").style.backgroundColor = "white";
+      }
+      function applyFont(p1) {
+        let ptag = document.querySelector("p");
+        ptag.style.fontSize = p1;
+      }
+    </script>
+  </body>
+</html>
