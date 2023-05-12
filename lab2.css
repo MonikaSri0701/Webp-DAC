@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    text-decoration: underline;
+  }
+  
+  .style1 {
+    font-size: 36px;
+  }
+  
+  .style2 {
+    font-size: large;
+  }
+  
+  .Objective {
+    font-family: cursive;
+    font-size: large;
+    padding: 16px;
+  }
+  
+  .Designation {
+    font-size: 36px;
+    padding: 16px;
+  }
+  
+  .project-template {
+    padding: 16px;
+  }
+  
+  .Skill {
+    font-size: x-large;
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  
+  .Description {
+    font-size: large;
+  }
