@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="lab1.js"></script>
+  </head>
+  <body>
+    <center>
+    <h1>TODO APP</h1>
+
+    <input id="messageId" type="text" placeholder="Enter your message here...." />
+    <input
+      id="btnid"
+      type="button"
+      value="Add New Element/Tag"
+      onclick="addNewElement(this)"
+    />
+    <div id="parent">
+      <div
+        style="
+          font-size: 28px;
+          margin-top: 8px;
+          display: flex;
+          text-align: center;
+          justify-content: space-between;
+        "
+      >
+        <div>Hello</div>
+        <input type="button" value="Delete" onclick="deleteTheMessage(this)" />
+      </div>
+    </div>
+</center>
+  </body>
+</html>
