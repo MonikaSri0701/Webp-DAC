@@ -25,3 +25,5 @@ function addNewElement(p1) {
   function deleteTheMessage(p1) {
     p1.parentElement.remove();
   }
+
+  
