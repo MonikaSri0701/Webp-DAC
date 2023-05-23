@@ -1,15 +1,58 @@
-import Header from "./pages/header";
-import BootstrapDemo from "./pages/BootstrapDemo";
-import React from 'react';
 import './App.css';
-import "bootstrap/dist/css/bootstrap.css";
+import { useState } from "react";
 
 function App() {
   return (
-    <div><Header /><BootstrapDemo />India, officially the Republic of India (ISO: Bhārat Gaṇarājya), is a country in South Asia. 
-  It is the seventh-largest country by area, the most populous country as of 1 May 2023, 
-  and the most populous democracy in the world.Bounded by the Indian Ocean on the south, 
-  the Arabian Sea on the southwest, and the Bay of Bengal on the southeast.</div>
+    <div>
+      <EventDemo />
+    </div>
+  );
+}
+function EventDemo() {
+  let [todo, setTodo] = useState("");
+  let [list, setList] = useState([]);
+
+  let inputHandler = (e) => {
+    console.log(e.target.value);
+    let newValue = e.target.value;
+    setTodo(newValue);
+  };
+
+  let addNewItem = () => {
+    let newList = [todo, ...list];
+    setList(newList);
+    setTodo("");
+  };
+
+  let deleteTodo = (index) => {
+    list.splice(index, 1);
+    console.log(list);
+    setList([...list]);
+  };
+
+  // UI
+  return (
+    <div>
+      <h1 className="bg-success text-white p-3">Todo App </h1>
+
+      <input
+        type="text"
+        placeholder="Enter Todo"
+        value={todo}
+        onChange={inputHandler}
+        Style="padding: 10px; background-color: skyblue;"
+      />
+      <input type="button" value="Add New Item" onClick={addNewItem} />
+
+      <hr />
+
+      {list.map((item, index) => (
+        <div key={index} className="d-flex justify-content-between">
+          <h1>{item}</h1>
+          <input type="button" value="DEL" onClick={() => deleteTodo(index)} />
+        </div>
+      ))}
+    </div>
   );
 }
 
