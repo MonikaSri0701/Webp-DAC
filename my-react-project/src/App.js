@@ -9,51 +9,46 @@ function App() {
   );
 }
 function EventDemo() {
-  let [todo, setTodo] = useState("");
-  let [list, setList] = useState([]);
+  let [counter, setCounter] = useState(100);
+  let [counter1, setCounter1] = useState(100);
+  let [displayImage, setDisplayImage] = useState(
+    "https://picsum.photos/id/237/300/300"
+  );
 
-  let inputHandler = (e) => {
-    console.log(e.target.value);
-    let newValue = e.target.value;
-    setTodo(newValue);
+  let like = () => {
+    counter = counter + 1;
+    setCounter(counter);
   };
 
-  let addNewItem = () => {
-    let newList = [todo, ...list];
-    setList(newList);
-    setTodo("");
+  let DisLike = () => {
+    counter1 = counter1 + 1;
+    setCounter1(counter1);
   };
 
-  let deleteTodo = (index) => {
-    list.splice(index, 1);
-    console.log(list);
-    setList([...list]);
+  let changeImage = () => {
+    displayImage = "https://picsum.photos/id/238/300/300";
+    setDisplayImage(displayImage);
   };
 
-  // UI
+  let resetImage = () => {
+    displayImage = "https://picsum.photos/id/237/300/300";
+    setDisplayImage(displayImage);
+  };
+
   return (
     <div>
-      <h1 className="bg-success text-white p-3">Todo App </h1>
+      <img src={displayImage} />
+      <h1><span Style="cursor: pointer">&#128077; {counter}</span></h1>
+      <h1><span Style="cursor: pointer">&#128078; {counter1}</span></h1>
 
-      <input
-        type="text"
-        placeholder="Enter Todo"
-        value={todo}
-        onChange={inputHandler}
-        Style="padding: 10px; background-color: skyblue;"
-      />
-      <input type="button" value="Add New Item" onClick={addNewItem} />
 
-      <hr />
-
-      {list.map((item, index) => (
-        <div key={index} className="d-flex justify-content-between">
-          <h1>{item}</h1>
-          <input type="button" value="DEL" onClick={() => deleteTodo(index)} />
-        </div>
-      ))}
-    </div>
+      <input type="button" value="Like Me" onClick={like} />
+      <input type="button" value="DisLike" onClick={DisLike} />
+      <br />
+      <input type="button" value="Change Image" onClick={changeImage} />
+      <input type="button" value="Reset Image" onClick={resetImage} />
+      </div>
   );
-}
+  }
 
 export default App;
