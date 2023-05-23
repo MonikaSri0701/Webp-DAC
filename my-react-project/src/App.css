@@ -36,15 +36,10 @@
     transform: rotate(360deg);
   }
 }
-.bg-success {
-  background-color: #4CAF50;
+h1 {
+  margin-bottom: 20px;
 }
 
-.text-white {
-  color: #FFFFFF;
-  text-align: center;
-}
-
-.p-3 {
-  padding: 10px;
+input[type='file'] {
+  margin-bottom: 20px;
 }
