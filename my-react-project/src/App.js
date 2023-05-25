@@ -1,40 +1,49 @@
-import { useState } from "react";
+//import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deposit, withdraw } from "./redux/accountSlice";
 
 function App() {
   return (
     <div>
-      {/** EventDemo is the name of the function, attributes are parameter */}
-      <EventDemo imageId="237" title="first" />
+      <DepositAccount />
       <hr />
-      <EventDemo imageId="238" title="second" />
-      <hr />
-      <EventDemo imageId="239" title="third" />
-      <hr />
-      <EventDemo imageId="240" title="third" />
+      <WithdrawlAccount />
     </div>
   );
 }
 
-function EventDemo({ imageId, title }) {
-  let [counter, setCounter] = useState(100);
-  let imageUrl = `https://picsum.photos/id/${imageId}/300/300`;
+function DepositAccount() {
+  // State is global here
+  let { account } = useSelector((state) => state);
+  let dispatch = useDispatch();
 
-  let likeMe = () => {
-    counter = counter + 1;
-
-    setCounter(counter);
+  let depositHandler = () => {
+    dispatch(deposit());
   };
 
-  // UI
   return (
     <div>
-      <img
-        src={imageUrl}
-        alt=""
-        style={{ width: "10%", objectFit: "cover" }}
-      />
-      <h1>Like {counter}</h1>
-      <input type="button" value="Like" onClick={likeMe} />
+      <h1>Account: CDAC</h1>
+      <h1>Balance: {account.balance}</h1>
+      <input type="button" value="Deposit" onClick={depositHandler} />
+    </div>
+  );
+}
+
+function WithdrawlAccount() {
+  // State is global here
+  let { account } = useSelector((state) => state);
+  let dispatch = useDispatch();
+
+  let withdrawHandler = () => {
+    dispatch(withdraw());
+  };
+
+  return (
+    <div>
+      <h1>Account: CDAC</h1>
+      <h1>Balance: {account.balance}</h1>
+      <input type="button" value="Withdraw" onClick={withdrawHandler} />
     </div>
   );
 }
