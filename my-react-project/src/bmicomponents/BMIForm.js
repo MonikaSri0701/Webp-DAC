@@ -14,7 +14,6 @@ if(isNaN(weight)||isNaN(height))
 else
 getData(weight,height)
 
-
   return (
     <div>
       BMIForm for user input
